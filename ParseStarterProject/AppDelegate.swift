@@ -28,6 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //--------------------------------------
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        Country.registerSubclass()
+        Nation.registerSubclass()
+        
+        
         // Enable storing and querying data from Local Datastore.
         // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.
         Parse.enableLocalDatastore()
@@ -37,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // ParseCrashReporting.enable()
         //
         // Uncomment and fill in with your Parse credentials:
-        // Parse.setApplicationId("your_application_id", clientKey: "your_client_key")
+         Parse.setApplicationId("", clientKey: "")
         //
         // If you are using Facebook, uncomment and add your FacebookAppID to your bundle's plist as
         // described here: https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/
@@ -47,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         PFUser.enableAutomaticUser()
 
+        
         let defaultACL = PFACL();
 
         // If you would like all objects to be private by default, remove this line.

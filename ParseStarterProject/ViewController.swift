@@ -14,7 +14,23 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        var country = Country()
+        country.name = "Australia"
+        country.countryState = "Victoria"
+        country.save()
+        
+        //----------------------------------------------------------------------------------------
+        //Country and Nation are identical, but Nation has a variable named 'state'.
+        //Uncomment the following and watch the crash
+        //----------------------------------------------------------------------------------------
+        
+        /*
+        var nation = Nation()
+        nation.name = "Australia"
+        nation.state = "Victoria"
+        nation.save()
+*/
     }
 
     override func didReceiveMemoryWarning() {
